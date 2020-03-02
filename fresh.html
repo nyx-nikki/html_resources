@@ -1,0 +1,649 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+
+    <!-- STYX integration -->
+
+
+    <link rel="stylesheet" href="https://nyx-labs.com/styx/styx.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <script src="https://nyx-labs.com/styx/styx.js">
+
+    </script>
+
+
+
+    <script>
+        $(document).styx();
+    </script>
+
+
+
+
+    <!-- Meta Title -->
+    <title>NYX Labs</title>
+
+    <!-- Meta Description -->
+    <meta content="nyx-labs.com - Digital forge and market place" name="description">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="NYX,HTML,CSS,XML,JavaScript,Solidity,Blockchain,Shopify,Digital Products, Design, Illustration, Artwork">
+
+    <!-- Meta Author -->
+    <meta name="author" content="zeroe, Nikki Schmid, Nyx-Labs.com">
+
+    <!-- Internal .CSS stylesheets -->
+    <link rel="stylesheet" href="css/nyx.css">
+
+    <!-- External .CSS stylesheets -->
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+
+    <!-- Google Fonts links -->
+    <link href="https://fonts.googleapis.com/css?family=Kameron:400,700|Megrim|Open+Sans:300,400,400i,700,700i,800,800i|Roboto:300,400,400i,700,700i,900,900i&display=swap&subset=cyrillic,greek,vietnamese" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150422068-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-150422068-2');
+    </script>
+
+    <!-- Responsive Layout -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Inline .CSS styles -->
+    <style>
+
+
+
+        .container {
+            margin: 18px;
+        }
+
+        /*-------- flex container --------*/
+        .flex-container {
+            display: flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            justify-content: space-around;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            -webkit-flex-flow: row wrap;
+            position: relative;
+            min-width: 380px;
+
+        }
+        .flex-item {
+            color: #fff;
+            margin: 0.5rem 0;
+            padding: 0;
+            width: 240px;
+            height: 230px;
+            position: relative;
+        }
+
+
+
+        .flex-item-inner {
+            display: flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -webkit-flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 230px;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .flex-item-inner a {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /*-------- cards --------*/
+        .card-front,
+        .card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 230px;
+            height: 230px;
+            padding: 12px;
+            margin: 0;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: -webkit-transform 0.3s;
+            transition: transform 0.3s;
+            justify-content: flex-end;
+        }
+        .card-front i.tile-icon {
+            display: block;
+            margin: 10px auto 20px auto;
+            text-align: center;
+        }
+        .card-front h3 {
+            font-size: 18px;
+            font-weight: normal;
+            margin: 10px 0;
+        }
+        .card-front p.detail {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .card-front.bg-violet {
+            background-color: #702082;
+        }
+        .card-front.bg-magenta {
+            background-color: #8932c1;
+        }
+        .card-front.bg-blue {
+            background-color: #9605d2;
+        }
+        .card-front.bg-green {
+            background-color: #6b00c3;
+        }
+
+        .card-front.bg-yellow {
+            background-color: #5100a2;
+        }
+
+
+        .card-front.bg-darkpurple{
+            background-color: #330066;
+        }
+
+        .card-front.bg-grey {
+            background-color: gray;
+        }
+
+        .card-back {
+            background-color: #1e1e1e;
+            -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+        }
+        .card-back p.title {
+            color: #000;
+            margin-top: 0;
+
+        }
+        .card-back p.desc {
+            color: #63666a;
+        }
+        .card-back p.link {
+            color: #260c4f;
+        }
+        .card-back.bg-violet {
+            background-color: #d8d7df;
+        }
+        .card-back.bg-magenta {
+            background-color: #ddd0cf;
+        }
+        .card-back.bg-blue {
+            background-color: #c8d7df;
+        }
+        .card-back.bg-green {
+            background-color: #d9e6dc;
+        }
+
+        /*-------- cards / flip effect --------*/
+
+        .flex-item:hover .card-front {
+            -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+            transition-duration: 0.5s;
+        }
+        .flex-item:hover .card-back {
+            -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+            transition-duration: 0.5s;
+        }
+
+
+    </style>
+
+
+
+</head>
+
+
+
+
+<!-- ***** Page Content -->
+
+
+<body style="background-image: url(https://www.nyx-labs.com/img/panel_background.png); background-repeat: no-repeat;">
+
+<!--** Header Navigation -->
+
+
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <a href="https://nyx-labs.com">
+            <img style="margin: 0.5rem auto; alignment: center; alignment-baseline: center;" src="img/nyx_logo_icon.png" width="240px"/></a>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="nyxlogo"><img src="#" style="display: none;"></div>
+
+
+
+
+
+<div class="nyxwrapper">
+
+    <div class="flex-container">
+
+
+    <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- flex-container -->
+        <div class="col-md-12 flex-container">
+
+
+            <!-- flex-item -->
+            <div class="flex-item">
+                <div class="flex-item-inner">
+                    <!-- card -->
+                    <a href="styx.html">
+                        <div class="card-front bg-violet">
+
+
+                            <img src="img/styx_icon.png" height="600" width="600"/></div>
+                        <div class="card-back bg-violet">
+                            <p class="title">STYX</p>
+                            <p class="desc">Open ledgers, trackable transaction, unique identifiers and automated "digital bookkeeping".Combining data bases, reactive apps and real time interactivity.</p>
+                            <a class="detail" href="https://nyx-labs.com/styx.html" style="color: black"><h5>Coming Soon</h5></a>
+
+                        </div>
+                    </a>
+                    <!-- /card -->
+                </div>
+            </div>
+            <!-- /flex-item -->
+
+
+            <!-- flex-item -->
+            <div class="flex-item">
+                <div class="flex-item-inner">
+                    <!-- card -->
+                    <a href="https://nyx-labs.com/ltnt.html">
+                        <div class="card-front bg-violet">
+
+
+                            <img src="img/ltnt_clean_black.png" height="600" width="600"/></div>
+                        <div class="card-back bg-violet">
+                            <p class="title">LTNT - A Podcast Experiment</p>
+
+                            <p class="desc">An online podcast series live from Vienna! Hosted by Alex, Garry and Nikki, this show talks about Lifestyle, Travel and Technology topics with an international twist.</p>
+                            <a class="detail" href="#" style="color: black"><h5>Listen</h5></a>
+
+                        </div>
+                    </a>
+                    <!-- /card -->
+                </div>
+            </div>
+            <!-- /flex-item -->
+
+
+            <!-- flex-item -->
+            <div class="flex-item">
+                <div class="flex-item-inner">
+                    <!-- card -->
+                    <a href="https://carola-holland-art.com" target="_blank">
+                        <div class="card-front bg-violet">
+
+
+                            <img src="img/panel_CAROLAHOLLAND.png" height="600" width="600"/></div>
+                        <div class="card-back bg-violet">
+                            <p class="title">Carola Holland Art
+                            <br>Webshop & Artist Portfolio</p>
+
+                            <p class="desc">We've built an a E-commerce and online vita platform for Carola Holland. Carola illustrates books for children and lives and works in Vienna.</p>
+                            <a class="detail" href="#" style="color: black"><h5>Discover</h5></a>
+
+                        </div>
+                    </a>
+                    <!-- /card -->
+                </div>
+            </div>
+            <!-- /flex-item -->
+
+
+            <!-- flex-item -->
+            <div class="flex-item">
+                <div class="flex-item-inner">
+                    <!-- card -->
+                    <a href="https://nyx-labs.com/the_church.html" target="_blank">
+                        <div class="card-front bg-violet">
+
+
+                            <img src="img/panel_THECHURCH.png" height="600" width="600"/></div>
+                        <div class="card-back bg-violet">
+                            <p class="title">The Church
+
+
+                            <p class="desc">Webdesign, graphics and photo created for The Church, a venue in Vienna offering live music, exclusive beers and great food.</p>
+                            <br><br>
+                            <a class="detail" href="http://the-church-vienna.at" style="color: black"><h5>Visit</h5></a>
+
+                        </div>
+                    </a>
+                    <!-- /card -->
+                </div>
+            </div>
+            <!-- /flex-item -->
+
+
+            <!-- flex-item -->
+            <div class="flex-item">
+                <div class="flex-item-inner">
+                    <!-- card -->
+                    <a href="https://nyx-labs.com/carmaxx.html">
+                        <div class="card-front bg-violet">
+
+
+                            <img src="img/panel_CARMAXX.png" height="600" width="600"/></div>
+                        <div class="card-back bg-violet">
+                            <p class="title">Carmaxx.at</p>
+
+                            <p class="desc">Online car dealership, rental and camping platform focusing on vintage Volkswagen cars. Based in Hirtenberg, Lower Austria.</p>
+
+                            <br><br>
+
+                            <a class="detail" href="#" style="color: black"><h5>Drive Now</h5></a>
+
+                        </div>
+                    </a>
+
+                </div>
+                <!-- /card -->
+            </div>
+
+
+            <!-- /flex-item -->
+
+        </div>
+
+        <!-- /flex-container -->
+
+</div>
+
+
+
+
+
+
+        <!-- flex-container -->
+        <div class="col-md-12 flex-container">
+
+
+
+
+
+            <!-- flex-item -->
+            <div class="flex-item">
+                <div class="flex-item-inner">
+                    <!-- card -->
+
+                    <a href="https://nyx-labs.myshopify.com/">
+                        <div class="card-front bg-violet">
+                            <img src="img/shop_icon.png" height="600" width="600"/>
+                            <h2 style="display: none">NYX MARKET</h2>
+                        </div>
+                        <div class="card-back bg-green">
+                            <p class="title">Nyx Marketplaces</p>
+                            <p class="desc">An archive and online store of useful assets for web design, graphic design, presentations, game design & more.
+
+                                <br><br><br>
+
+
+                            </p>
+                            <a class="detail" style="color: black" href="https://nyx-labs.myshopify.com/collections/all"><h5>See & Shop</h5></a>
+                        </div>
+                    </a>
+                    <!-- /card -->
+                </div>
+            </div>
+
+            <!-- flex-item -->
+            <div class="flex-item">
+                <div class="flex-item-inner">
+                    <!-- card -->
+                    <a href="https://nyx-labs.myshopify.com/blogs/news">
+                        <div class="card-front bg-violet">
+                            <img src="img/blog_icon.png" height="600" width="600"/>
+
+                            <h3 style="display: none">Articles & News</h3>
+                            <p class="detail" style="display: none">Ramblings and (sometimes) educational content.</p>
+
+
+                        </div>
+                        <div class="card-back bg-violet">
+                            <p class="title">Articles & Written Content</p>
+                            <p class="desc">You can read our latest news or explore the archives..also includes Ramblings and (sometimes) educational content.
+
+
+                            </p>
+                            <br>
+                            <a class="detail" style="color: black" href="https://nyx-labs.myshopify.com/blogs/news"><h5>Read more</h5></a>
+                        </div>
+                    </a>
+                    <!-- /card -->
+                </div>
+            </div>
+            <!-- /flex-item -->
+
+
+
+
+
+            <!-- flex-item -->
+            <div class="flex-item">
+                <div class="flex-item-inner">
+                    <!-- card -->
+                    <a href="technology.html">
+                        <div class="card-front bg-violet">
+                            <img src="img/problem_solving.png" height="600" width="600"/>
+
+                        </div>
+                        <div class="card-back bg-violet">
+
+                            <p class="title">Methodology & Coding Languages<br>A.K.A. Plugging the parts together.</p>
+                            <p class="desc">Learn about how we build our products.
+                                <br>  <br>
+
+
+                            </p>
+
+
+
+                            <a class="detail" style="color: black" href="technology.html"><h5>Research</h5></a>
+                        </div>
+                    </a>
+                    <!-- /card -->
+                </div>
+            </div>
+
+            <!-- flex-item -->
+            <div class="flex-item">
+                <div class="flex-item-inner">
+                    <!-- card -->
+                    <a href="about.html">
+                        <div class="card-front bg-violet">
+                            <img src="img/moonwater_icon.png" height="600" width="600"/>
+                            <h3 style="display: none">About Us</h3>
+                            <p class="detail" style="display: none">figuring out what we are all about.</p>
+                        </div>
+                        <div class="card-back bg-violet">
+                            <p class="title">Teamwork makes the dream work.</p>
+                            <p class="desc">Get to know our staff, goals and history.
+                                <br><br><br><br>
+
+
+                            </p>
+                            <a class="detail" style="color: black" href="about.html"><h5>Meet the team</h5></a>
+                        </div>
+                    </a>
+                    <!-- /card -->
+                </div>
+            </div>
+
+
+            <!-- flex-item -->
+            <div class="flex-item">
+            
+                <div class="flex-item-inner">
+                
+                    <!-- card -->
+                    <a href="contact.html">
+                        <div class="card-front bg-violet">
+                            <img src="img/contact_icon.png" height="600" width="600"/>
+                            <h3 style="display: none">Contact</h3>
+
+                        </div>
+                        <div class="card-back bg-violet">
+                            <p class="title">Communication is key!</p>
+                            <p class="desc">Got questions, thoughts or feedback?
+                                Let's work on it together.
+                                <br><br> 
+                                <p class="desc">get in touch!</p>
+                            </p>
+
+                            <a class="detail" style="color: black" href="contact.html"><h5>Write</h5></a>
+                        </div>
+                    </a>
+                    
+                    <!-- /card -->
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Page Footer -->
+
+<footer  style="padding-top: 1rem; background-color: white; border-top: 1px black solid; border-bottom: #990099 1px solid ">
+
+
+
+
+        <div class="row" style="background-color: white">
+            <div class="large-4 columns">
+
+
+                <h4 style="text-align: left;">NYX LABS</h4>
+
+                <img src="img/moonset_icon.png" width="26" style="float: left;"/> <p> ... Carpe Noctem.</p>
+
+               <br>
+
+                  <p style="font-size: small">  We provide dedicated software solutions, web applications and design processes for small and large enterprises to improve workflow efficiency, organisational logistics, tracibility of components and genuinity verification.</p>
+
+                <p style="font-size: xx-small">Made with ♡ - 2019 - 2020 - v.0.7.2 </p>
+
+            </div>
+
+            <div class="large-3 large-offset-2 columns" >
+                <ul class="menu vertical">
+                    <li><a href="http://nyx-labs.com/">Home</a></li>
+                    <li><a href="https://nyx-labs.myshopify.com/">Shop</a></li>
+                    <li><a href="styx.html">Technology</a></li>
+                </ul>
+            </div>
+            <div class="large-3 columns">
+                <ul class="menu vertical">
+
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="disclaimer.html">Data Protection</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+    <div class="row">
+
+        <div id="cookiedingsbums" style="padding-bottom: 4rem; padding-top: 2rem;">
+
+
+            <div>
+
+                <div style="float: right">
+                    <p>X</p>
+                </div>
+                <p>
+                    <span>Yes, this website uses Cookies.</span>
+                    <a href="disclaimer.html">Learn more about our Privacy Policy here.</a>
+                    <br>
+                    <span>Ja, diese Webseite verwendet Cookies.</span>
+                    <a href="disclaimer.html">Hier erfahrt ihr alles zum Datenschutz</a>
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+
+
+</body>
+</html>
